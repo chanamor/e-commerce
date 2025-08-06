@@ -43,7 +43,7 @@ public class CartItem {
      * 
      */
 
-     public void increaseQuatity(int amount){
+     public void increaseQuantity(int amount){
         if (amount < 0) {
             throw new RuntimeException("RI violated : amount cannot use");
         }

@@ -27,9 +27,9 @@ public class BulkDiscountStrategy implements DiscountStrategy {
         double price = item.getproduct().getprice();
 
         if (quantity >= minimumQuantity) {
-            return price * quantity * (1 - discountPercentage);
+            return price * quantity * ( 1 - discountPercentage);
         }else{
-            return 0.0;
+            return price * quantity;
         }
         
        

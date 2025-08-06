@@ -50,6 +50,8 @@ public class ShoppingCart {
         checkRep();
      }
 
+     
+
      public void addItem(String productId, int quantity){
         Product product = productCatalog.findById(productId);
 
@@ -63,7 +65,7 @@ public class ShoppingCart {
 
         for (CartItem item : cartItem) {
             if (item.getproduct().getproductId().equals(productId)) {
-                item.increaseQuatity(quantity);
+                item.increaseQuantity(quantity);
                 checkRep();
                 return;
             }
@@ -71,6 +73,9 @@ public class ShoppingCart {
         cartItem.add(new CartItem(product, quantity));
         checkRep();
      }
+
+
+
 
      public void removeItem(String productId){
         for(int i = 0; i < cartItem.size(); i++){
@@ -82,6 +87,9 @@ public class ShoppingCart {
         }
      }
 
+
+
+
      public double getTotalPrice(){
         double total = 0.0;
         for (CartItem item : cartItem) {
@@ -90,9 +98,14 @@ public class ShoppingCart {
         return total;
      }
 
+
+
      public int getItemCount(){
         return cartItem.size();
      }
+
+
+
      public void clearCart(){
         cartItem.clear();
         checkRep();
