@@ -16,7 +16,7 @@ public class ProductCatalog {
         // เช็ค ตัวซ้ำ
         for(int i = 0; i < products.size(); i++){
             for(int j = 0; j < products.size(); j++){
-                if (products.get(i) == products.get(j)) {
+                if (products.get(i).equals(products.get(j))) {
                     throw new RuntimeException("RI violated : product cannot use : duplicate");
                 }
             }

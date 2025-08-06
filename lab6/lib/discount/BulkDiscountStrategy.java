@@ -5,7 +5,7 @@ import lib.*;
 /**
  * 
  *  Bulk 
- * 
+ * -ให้ส่วนลดเป็นเปอร์เซ็นต์ถ้าซื้อสินค้าเกินจำนวนขั้นต่ำ
  * 
  */
 
@@ -27,7 +27,7 @@ public class BulkDiscountStrategy implements DiscountStrategy {
         double price = item.getproduct().getprice();
 
         if (quantity >= minimumQuantity) {
-            return price * quantity * discountPercentage;
+            return price * quantity * (1 - discountPercentage);
         }else{
             return 0.0;
         }
