@@ -31,9 +31,7 @@ public class ShoppingCart {
                 throw new RuntimeException("RI violated: CartItem must not be null");
             }
 
-            if (itemi.getquantity() <= 0 ) {
-                throw new RuntimeException("RI violated: quantity must be > 0");
-            }
+            
 
         for(int j = i + 1; j < cartItem.size(); j++){
             CartItem itemJ = cartItem.get(j);
@@ -54,6 +52,11 @@ public class ShoppingCart {
 
      public void addItem(String productId, int quantity){
         Product product = productCatalog.findById(productId);
+
+        if (quantity <= 0) {
+        throw new IllegalArgumentException("Quantity must be > 0");
+        }
+        
         if (product == null) {
             throw new IllegalArgumentException("Product not found: " + productId );
         }
